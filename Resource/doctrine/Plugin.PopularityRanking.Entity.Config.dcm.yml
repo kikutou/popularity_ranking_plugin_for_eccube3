@@ -1,0 +1,23 @@
+Plugin\PopularityRanking\Entity\Config:
+    type: entity
+    table: plg_pop_rank_config
+    repositoryClass: Plugin\PopularityRanking\Repository\ConfigRepository
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: pop_rank_config_id
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: text
+            nullable: false
+            column: pop_rank_config_key
+        value:
+            type: text
+            nullable: true
+            column: pop_rank_config_value
+    lifecycleCallbacks: {  }

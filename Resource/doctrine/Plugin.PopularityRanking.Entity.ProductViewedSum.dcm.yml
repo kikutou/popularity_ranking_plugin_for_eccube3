@@ -1,0 +1,34 @@
+Plugin\PopularityRanking\Entity\ProductViewedSum:
+    type: entity
+    table: plg_pop_rank_product_viewed_sum
+    repositoryClass: Plugin\PopularityRanking\Repository\ProductViewedSumRepository
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        viewed_sum:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        create_date:
+            type: datetime
+            nullable: false
+        update_date:
+            type: datetime
+            nullable: false
+    oneToOne:
+        Product:
+            targetEntity: Eccube\Entity\Product
+            joinColumn:
+                name: product_id
+                referencedColumnName: product_id
+    lifecycleCallbacks: {  }

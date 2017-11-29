@@ -1,0 +1,8 @@
+name: 人気商品ランキング
+code: PopularityRanking
+version: 1.0
+orm.path:
+    - /Resource/doctrine
+event: PopularityRankingEvent
+service:
+    - PopularityRankingServiceProvider
