@@ -8,7 +8,7 @@
 {% form_theme form 'Form/bootstrap_3_horizontal_layout.html.twig' %}
 
 {% block main %}
-    <form class="form-horizontal" method="post" action="{{ url('plugin_Top_config') }}">
+    <form class="form-horizontal" method="post" action="">
         {{ form_widget(form._token) }}
         <div class="row" id="aside_wrap">
             <div class="col-md-9">
@@ -17,7 +17,7 @@
                         <h3 class="box-title">人気商品ランキングプラグインの商品の表示数設定</h3>
                     </div><!-- /.box-header -->
                     <div class="box-body form-horizontal">
-                        {{ form_row(form.show_num) }}
+                        {{ form_row(form.quantity) }}
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
             </div><!-- /.col -->
