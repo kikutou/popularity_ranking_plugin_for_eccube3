@@ -34,10 +34,13 @@ class PopularityRankingController
         
         $quantity = $Config->getValue();
 
-        $ProductViewedSums = $app['popularity_ranking_plugin.repository.product_viewed_sum']->findAll(array(
-            'viewed_sum' => 'DESC',
-            'limit' => $quantity
-        ));
+        $ProductViewedSums = $app['popularity_ranking_plugin.repository.product_viewed_sum']->findBy(
+            array(),
+            array(
+                "viewed_sum" => "DESC"
+            ),
+            $quantity
+        );
         
         $Products = array();
         

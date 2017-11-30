@@ -1,11 +1,9 @@
-<style>
-
-</style>
+<div>
 {% if Products|length %}
-<div id="news_area">
+<div id="popularity_ranking_title">
     <h2 class="heading01">人气商品</h2>
 </div>
-<div id="sales_ranking" class="item_gallery">
+<div id="popularity_ranking" class="item_gallery row">
 {% for Product in Products %}
     <div id="result_list_box--{{ Product.id }}" class="col-sm-2 col-xs-4">
         <div id="result_list__item--{{ Product.id }}" class="product_item">
@@ -38,3 +36,4 @@
 {% endfor %}
 </div>
 {% endif %}
+</div>
