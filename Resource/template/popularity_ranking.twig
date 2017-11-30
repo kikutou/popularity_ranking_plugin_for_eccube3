@@ -1,9 +1,13 @@
+<style>
 
+</style>
+{% if Products|length %}
 <div id="news_area">
-<h2 class="heading01">人气商品</h2>
+    <h2 class="heading01">人气商品</h2>
 </div>
+<div id="sales_ranking" class="item_gallery">
 {% for Product in Products %}
-    <div id="result_list_box--{{ Product.id }}" class="col-sm-2 col-xs-0">
+    <div id="result_list_box--{{ Product.id }}" class="col-sm-2 col-xs-4">
         <div id="result_list__item--{{ Product.id }}" class="product_item">
             <a href="{{ url('product_detail', {'id': Product.id}) }}">
                 <div id="result_list__image--{{ Product.id }}" class="item_photo">
@@ -32,3 +36,5 @@
         </div>
     </div>
 {% endfor %}
+</div>
+{% endif %}
