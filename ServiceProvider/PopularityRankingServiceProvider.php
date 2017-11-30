@@ -18,22 +18,22 @@ class PopularityRankingServiceProvider implements ServiceProviderInterface
         $app['popularity_ranking_plugin.repository.config'] = $app->share(function () use ($app) {
             return $app['orm.em']->getRepository('Plugin\PopularityRanking\Entity\Config');
         });
-        
-        // Route
-        $app->match('/'.$app['config']['admin_route'].'/plugin/popularity_ranking/config', 'Plugin\PopularityRanking\Controller\ConfigController::index')->bind('plugin_popularity_ranking_config');
 
-        
+        // Route
+        $app->match('/'.$app['config']['admin_route'].'/plugin/popularity_ranking/config', 'Plugin\PopularityRanking\Controller\ConfigController::index')->bind('plugin_PopularityRanking_config');
+
+
         // Form/Type
         $app['form.types'] = $app->share($app->extend('form.types', function ($types) use ($app) {
             $types[] = new PopularityRankingConfigType();
             return $types;
         }));
-        
+
         // Block
         $app->match('/block/popularity_ranking', 'Plugin\PopularityRanking\Controller\Block\PopularityRankingController::index')->bind('block_popularity_ranking');
 
     }
-    
+
 
     public function boot(BaseApplication $app)
     {
